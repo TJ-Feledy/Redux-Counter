@@ -14,20 +14,18 @@ export default (state = initialState, action) => {
     case INCREMENT:
       const {total} = action.payload
       const addTotal = parseInt(total) + 1
-      const subTotal = parseInt(total) - 1
-      console.log(action.type)
-
+      
       return {
         ...state,
-        [total]: addTotal,
+        count: addTotal,
       }
-
+      
     case DECREMENT:
-      console.log(action.type)
+      const subTotal = parseInt(action.payload.total) - 1
 
       return {
         ...state,
-        [total]: subTotal,
+        count: subTotal,
       }
 
     default:
